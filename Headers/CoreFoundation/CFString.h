@@ -535,7 +535,7 @@ CFStringFold (CFMutableStringRef theString, CFOptionFlags theFlags,
 struct CFStringInlineBuffer
 {
   UniChar buffer[__kCFStringInlineBufferLength];
-  CFStringRef theString;
+  __unsafe_unretained CFStringRef theString;
   const UniChar *directBuffer;
   CFRange rangeToBuffer;
   CFIndex bufferedRangeStart;
