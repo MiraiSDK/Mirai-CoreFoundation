@@ -1,0 +1,16 @@
+#!/bin/sh
+
+pushd `pwd`/`dirname $0`
+SCRIPT_ROOT=`pwd`
+popd
+
+pushd $SCRIPT_ROOT/../../MiraSDK/Products/android/android-toolchain-arm
+ARMSYSROOT=`pwd`
+popd
+
+PREFIX=$ARMSYSROOT/sysroot/usr
+
+. $ARMSYSROOT/sysroot/usr/share/GNUstep/Makefiles/GNUstep.sh
+
+./configure --host=arm-linux-androideabi  --disable-gcd
+

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+pushd `pwd`/`dirname $0`
+SCRIPT_ROOT=`pwd`
+popd
+
+pushd $SCRIPT_ROOT/../../MiraSDK/Products/android/android-toolchain-arm
+ARMSYSROOT=`pwd`
+popd
+
+PREFIX=$ARMSYSROOT/sysroot/usr
+
+. $ARMSYSROOT/sysroot/usr/share/GNUstep/Makefiles/GNUstep.sh
+
+make
+make install
+
+pushd /Users/chyhfj/Development/MiraSDK/Products/android/android-toolchain-arm/sysroot/usr/lib
+mv libgnustep-corebase.so.0.2 libgnustep-corebase.so
+rm libgnustep-corebase.so.0
+popd
