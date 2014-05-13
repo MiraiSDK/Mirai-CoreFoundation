@@ -1,0 +1,11 @@
+/Headers/CoreFoundation/CFBase.h
+
+/Source/obj/
+
+/Source/GNUmakefile
+
+/Source/config.h
+
+/config.status
+/config.log
+/autom4te.cache/
