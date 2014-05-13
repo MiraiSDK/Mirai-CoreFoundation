@@ -626,8 +626,10 @@ CFSocketInvalidate (CFSocketRef s)
 Boolean
 CFSocketIsValid (CFSocketRef s)
 {
+#if HAVE_LIBDISPATCH
   if (s->_source != NULL)
     return CFRunLoopSourceIsValid(s->_source); // !kCFSocketCloseOnInvalidate case
+#endif
   return s->_socket != -1;
 }
 
