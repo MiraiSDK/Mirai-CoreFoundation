@@ -12,5 +12,5 @@ PREFIX=$ARMSYSROOT/sysroot/usr
 
 . $ARMSYSROOT/sysroot/usr/share/GNUstep/Makefiles/GNUstep.sh
 
-./configure --host=arm-linux-androideabi  --disable-gcd
+./configure --host=arm-linux-androideabi --disable-gcd --disable-implicit-bridge
 
