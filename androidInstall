@@ -4,7 +4,7 @@ pushd `pwd`/`dirname $0`
 SCRIPT_ROOT=`pwd`
 popd
 
-pushd $SCRIPT_ROOT/../../MiraSDK/Products/android/android-toolchain-arm
+pushd $SCRIPT_ROOT/../MiraSDK/Products/android/android-toolchain-arm
 ARMSYSROOT=`pwd`
 popd
 
