@@ -32,7 +32,7 @@
 
 CF_EXTERN_C_BEGIN
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSArray;
 @class NSMutableArray;
 typedef NSArray* CFArrayRef;

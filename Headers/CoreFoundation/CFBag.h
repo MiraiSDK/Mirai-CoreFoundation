@@ -31,7 +31,7 @@
 
 CF_EXTERN_C_BEGIN
 
-#ifdef __OBJC__
+#ifdef __IMPLICIT_BRIDGE__
 @class NSBag;
 @class NSMutableBag;
 typedef NSBag* CFBagRef;

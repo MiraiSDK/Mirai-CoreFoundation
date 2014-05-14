@@ -34,7 +34,7 @@ CF_EXTERN_C_BEGIN
 
 #if OS_API_VERSION(MAC_OS_X_VERSION_10_5, GS_API_LATEST)
 
-#if __OBJC__
+#if __IMPLICIT_BRIDGE__
 @class NSError;
 typedef NSError * CFErrorRef;
 #else

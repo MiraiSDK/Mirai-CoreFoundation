@@ -625,6 +625,7 @@ ac_includes_default="\
 ac_header_list=
 ac_subst_vars='LTLIBOBJS
 LIBOBJS
+GS_USE_IMPLICIT_BRIDGE
 GNUSTEP_CONFIG
 ICU_CONFIG
 GS_UINTPTR_T
@@ -691,6 +692,7 @@ enable_option_checking
 enable_gcd
 enable_objc_bridge
 with_zoneinfo_dir
+enable_implicit_bridge
 '
       ac_precious_vars='build_alias
 host_alias
@@ -1314,6 +1316,9 @@ Optional Features:
   --disable-gcd           Disables Grand Central Dispatch support. Leads to a
                           loss of functionality.
   --disable-objc-bridge   Disables the Objective-C toll-free bridge mechanism.
+  --disable-implicit-bridge
+                          Disables the Objective-C implicit toll-free bridge
+                          mechanism.
 
 Optional Packages:
   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
@@ -4437,6 +4442,32 @@ $as_echo "$with_zoneinfo_dir" >&6; }
 cat >>confdefs.h <<_ACEOF
 #define TZDIR "$with_zoneinfo_dir"
 _ACEOF
+
+
+#---
+# Check Implicit Bridge
+#---
+# Check whether --enable-implicit-bridge was given.
+if test "${enable_implicit_bridge+set}" = set; then :
+  enableval=$enable_implicit_bridge; enable_implicit_bridge=$enableval
+else
+  enable_implicit_bridge=yes
+fi
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking use implicit bridge" >&5
+$as_echo_n "checking use implicit bridge... " >&6; }
+if test "$enable_implicit_bridge" = "yes"; then :
+  GS_USE_IMPLICIT_BRIDGE="1"
+
+      { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }
+else
+  GS_USE_IMPLICIT_BRIDGE="0"
+
+      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; }
+fi
+
 
 
 ac_config_files="$ac_config_files Source/GNUmakefile Headers/CoreFoundation/CFBase.h"

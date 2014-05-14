@@ -168,6 +168,22 @@ AC_MSG_RESULT($with_zoneinfo_dir)
 AC_DEFINE_UNQUOTED([TZDIR], ["$with_zoneinfo_dir"],
                    [Define to the directory contain time zone object files.])
 
+#---
+# Check Implicit Bridge
+#---
+AC_ARG_ENABLE([implicit-bridge],
+  [AS_HELP_STRING([--disable-implicit-bridge],
+    [Disables the Objective-C implicit toll-free bridge mechanism.])],
+  [enable_implicit_bridge=$enableval], [enable_implicit_bridge=yes])
+AC_MSG_CHECKING([use implicit bridge])
+AS_IF([test "$enable_implicit_bridge" = "yes"],
+      [AC_SUBST([GS_USE_IMPLICIT_BRIDGE], ["1"])
+      AC_MSG_RESULT(yes)],
+      [AC_SUBST([GS_USE_IMPLICIT_BRIDGE], ["0"])
+      AC_MSG_RESULT(no)])
+
+
+
 AC_CONFIG_FILES([Source/GNUmakefile Headers/CoreFoundation/CFBase.h])
 
 AC_OUTPUT

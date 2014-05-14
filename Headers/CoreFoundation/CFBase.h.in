@@ -98,6 +98,12 @@ typedef UInt8 UTF8Char;
 # endif
 #endif
 
+#if __OBJC__
+# if @GS_USE_IMPLICIT_BRIDGE@
+#   define __IMPLICIT_BRIDGE__ 1
+# endif
+#endif
+
 #if defined(_WIN32)
 # if defined(BUILDING_SELF)
 #  if defined(__cplusplus)
@@ -270,7 +276,7 @@ typedef CFTypeRef CFPropertyListRef;
 /*
  * CFString
  */
-#if __OBJC__
+#if __IMPLICIT_BRIDGE__
 @class NSString;
 @class NSMutableString;
 typedef NSString * CFStringRef;
