@@ -8,7 +8,7 @@ checkError()
     fi
 }
 
-./configure --host=arm-linux-androideabi --disable-gcd --disable-implicit-bridge
+CFLAGS="$ARCHFLAGS" CPPFLAGS="$ARCHFLAGS" ./configure --host=arm-linux-androideabi --disable-gcd --disable-implicit-bridge
 checkError $? "configure core-base failed"
 
 make
