@@ -8,7 +8,8 @@ checkError()
     fi
 }
 
-CFLAGS="$ARCHFLAGS" CPPFLAGS="$ARCHFLAGS" ./configure --host=arm-linux-androideabi --disable-gcd --disable-implicit-bridge
+
+CFLAGS="$ARCHFLAGS" CPPFLAGS="$ARCHFLAGS" ./configure --host=$HOSTEABI --disable-gcd --disable-implicit-bridge
 checkError $? "configure core-base failed"
 
 make
@@ -19,4 +20,5 @@ make install
 pushd $MIRAI_SDK_PREFIX/lib
 mv libgnustep-corebase.so.0.2 libgnustep-corebase.so
 rm libgnustep-corebase.so.0
+ln -s libgnustep-corebase.so libCoreFoundation.so
 popd
