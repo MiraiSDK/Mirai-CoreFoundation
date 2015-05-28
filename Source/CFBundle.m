@@ -257,3 +257,12 @@ CFTypeRef CFBundleGetValueForInfoDictionaryKey(CFBundleRef bundle,
   return [ns objectForInfoDictionaryKey: (NSString *)key];
 }
 
+const CFStringRef kCFBundleInfoDictionaryVersionKey = @"CFBundleInfoDictionaryVersion";
+const CFStringRef kCFBundleExecutableKey = @"CFBundleExecutable";
+const CFStringRef kCFBundleIdentifierKey = @"CFBundleIdentifier";
+const CFStringRef kCFBundleVersionKey = @"CFBundleVersion";
+const CFStringRef kCFBundleDevelopmentRegionKey = @"CFBundleDevelopmentRegion";
+const CFStringRef kCFBundleNameKey = @"CFBundleName";
+const CFStringRef kCFBundleLocalizationsKey = @"CFBundleLocalizations";
+
+
